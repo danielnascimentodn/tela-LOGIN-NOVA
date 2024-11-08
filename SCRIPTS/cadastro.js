@@ -24,6 +24,6 @@ let msgSucess = document.querySelector('#msgSucess')
 
 nome.addEventListener('keyup', () => {
     if(nome. value. length <= 2 )
-
+        labelUsuario.setAttribute('style', 'color: green')
 }
 )
