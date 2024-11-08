@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SENAC</title>
+    <img class="logo" src="/ASSETS/jovemprogramador_logo.png" alt="">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Bem Vindo de volta ao SENAC</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                    <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <div class="options">
+                <a href="cadastro.html">Criar Conta</a>
+                <a href="#">Esqueceu a senha?</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
