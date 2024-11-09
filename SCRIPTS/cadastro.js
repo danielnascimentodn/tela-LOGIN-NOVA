@@ -92,7 +92,7 @@ function cadastrar() {
     if(validNome && validUsuario && validSenha && validConfirmSenha) {
         let listaUser = JSON.parse(localStorage.getItem['listaUser'] || '[]')
 
-        let senhaCriptografada = Crypto.SHA512(senha.value).toString()
+        let senhaCriptografada = CryptoJS.SHA512(senha.value).toString()
 
         listaUser.push(
             {
