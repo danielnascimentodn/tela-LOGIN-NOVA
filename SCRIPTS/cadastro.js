@@ -1,5 +1,5 @@
-let btn = document.querySelector('#verpassword')
-let btnConfim = document.querySelector('#verconfirmpassword')
+let btn = document.querySelector('#verSenha')
+let btnConfim = document.querySelector('#verConfirmSenha')
 
 let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
@@ -76,10 +76,10 @@ senha.addEventListener('keyup',()=> {
 
 confirmSenha.addEventListener('keyup', () => {
     if(senha.value == confirmSenha.value){
-    labelConfirmSenha.setAttribute('style', 'color: green')
-      labelConfirmSenha.innerHTML = 'Confirmar Senha'
-      confirmSenha.setAttribute('style', 'border-color: green')
-      validConfirmSenha = true
+        labelConfirmSenha.setAttribute('style', 'color: green')
+        labelConfirmSenha.innerHTML = 'Confirmar Senha'
+        confirmSenha.setAttribute('style', 'border-color: green')
+        validConfirmSenha = true
     } else {
         labelConfirmSenha.setAttribute('style', 'color: red')
         labelConfirmSenha.innerHTML = 'Confirmar Senha *As senhas não conferem'
@@ -101,8 +101,40 @@ function cadastrar() {
                 senhaCad: senhaCriptografada
             }
         )
+        localStorage.setItem('listUser', JSON.stringify(listaUser))
+
+        msgSucess.setAttribute('style', 'display: block')
+        msgSucess.innerHTML = '<strong>Cadastrando usuário...</strong>'
+        msgError.setAttribute('style', 'display: none')
+        msgError.innerHTML = ''
+
+        setTimeout(() =>{
+            window.location.href = '../HTML/login.html'
+        }, 3000)
+    } else {
+        msgError.setAttribute('style', 'display: block')
+        msgError.innerHTML = '<strong>Preencha todos os campos.</strong>'
+        msgSucess.setAttribute('style', 'display: none')
+        msgSucess.innerHTML = ''
         
     }
-  
-    localStorage.setItem('listUser', JSON.stringify(listaUser))
 }
+    btn.addEventListener('click', ()=> {
+        let inputSenha = document.querySelector('#password')
+
+        if(inputSenha.getAttribute('type') == 'password'){
+            inputSenha.setAttribute('type', 'text')
+        } else {
+            inputSenha.setAttribute('type', 'password')
+        }
+    })
+
+    btnConfim.addEventListener('click', ()=> {
+        let inputConfirmSenha = document.querySelector('#confirm-password')
+
+        if(inputConfirmSenha.getAttribute('type') == 'password'){
+            inputConfirmSenha.setAttribute('type', 'text')
+        } else {
+            inputConfirmSenha.setAttribute('type', 'password')
+        }
+    })
